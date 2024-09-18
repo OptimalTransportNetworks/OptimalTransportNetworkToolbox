@@ -1,8 +1,8 @@
-# OptimalTransportNetworks
+# OptimalTransportNetworkToolbox
 
-**Optimal Transport Networks in Spatial Equilibrium - MATLAB Toolbox v1.0.4b**
+**Optimal Transport Networks in Spatial Equilibrium - MATLAB Toolbox**
 
-MATLAB OptimalTransportNetworkToolbox (v1.0.4b) implementing the quantitative spatial economic model of:
+MATLAB toolbox implementing the quantitative spatial economic model of:
 
 Fajgelbaum, P. D., & Schaal, E. (2020). Optimal transport networks in spatial equilibrium. *Econometrica, 88*(4), 1411-1452.
 
