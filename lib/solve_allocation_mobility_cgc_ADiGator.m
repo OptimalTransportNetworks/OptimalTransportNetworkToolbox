@@ -134,6 +134,8 @@ results.hj(results.Lj==0)=0;
 % Trade flows
 Qin_direct=reshape(x(1+graph.J*param.N+1:1+graph.J*param.N+graph.ndeg*param.N),[graph.ndeg param.N]);
 Qin_indirect=reshape(x(1+graph.J*param.N+graph.ndeg*param.N+1:1+graph.J*param.N+2*graph.ndeg*param.N),[graph.ndeg param.N]);
+
+% Flows: positive if along edge
 results.Qin=zeros(graph.ndeg*param.N,1);
 
 for i=1:param.N*graph.ndeg
