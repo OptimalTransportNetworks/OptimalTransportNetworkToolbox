@@ -163,17 +163,8 @@ results.Dj=sum(results.Djn.^((param.sigma-1)/param.sigma),2).^(param.sigma/(para
 % Trade flows
 results.Qin_direct=reshape(x(1+graph.J+graph.J*param.N+1:1+graph.J+graph.J*param.N+graph.ndeg*param.N),[graph.ndeg param.N]);
 results.Qin_indirect=reshape(x(1+graph.J+graph.J*param.N+graph.ndeg*param.N+1:1+graph.J+graph.J*param.N+2*graph.ndeg*param.N),[graph.ndeg param.N]);
-
-results.Qin=zeros(graph.ndeg*param.N,1);
-
-for i=1:param.N*graph.ndeg
-    if results.Qin_direct(i)>results.Qin_indirect(i)
-        results.Qin(i)=results.Qin_direct(i)-results.Qin_indirect(i);
-    else
-        results.Qin(i)=results.Qin_direct(i)-results.Qin_indirect(i);
-    end
-end
-results.Qin=reshape(results.Qin,[graph.ndeg param.N]);
+% Flows: positive if along edge
+results.Qin=reshape(Qin_direct-Qin_indirect,[graph.ndeg param.N]);
 
 % recover the Q's
 results.Qjkn=zeros(graph.J,graph.J,param.N);

@@ -57,8 +57,7 @@ end
 % PARAMETRIZE IPOPT
 % =================
 
-% Init functions (note: this step is crucial since auxdata has changed
-% since call to ADiGator!)
+% Init functions (note: this step is crucial since auxdata has changed since call to ADiGator!)
 funcs.objective = @(x) objective_duality(x,auxdata);
 funcs.gradient = @(x) objective_duality_Grd(x,auxdata);
 funcs.hessian = @(x,sigma_hess,lambda_hess) objective_duality_Hes(x,auxdata,sigma_hess,lambda_hess);
